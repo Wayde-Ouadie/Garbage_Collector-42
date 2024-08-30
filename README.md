@@ -1,12 +1,12 @@
-# G_Collector
+# Garbage_collector
 
-G_Collector is a simple memory management utility implemented in C. It provides functions for managing a linked list of allocated memory blocks, allowing for easy tracking and cleanup of dynamically allocated memory.
+Garbage_collector is a simple memory management utility implemented in C. It provides functions for managing a linked list of allocated memory blocks, allowing for easy tracking and cleanup of dynamically allocated memory.
 
 ## Files
 
-### 1. g_collector.h
+### 1. garbage_collector.h
 
-This header file contains the definitions of the data structures and function prototypes used in the G_Collector utility.
+This header file contains the definitions of the data structures and function prototypes used in the Garbage_collector utility.
 
 - `typedef struct s_col`: Defines a structure for a node in the linked list, containing a pointer to allocated memory (`ptr`) and a pointer to the next node (`next`).
   
@@ -26,31 +26,31 @@ This header file contains the definitions of the data structures and function pr
 
 ### 2. main.c (or any other source file)
 
-You can include and use the functions from `g_collector.h` in your C programs to manage memory allocation and deallocation effectively.
+You can include and use the functions from `garbage_collector.h` in your C programs to manage memory allocation and deallocation effectively.
 
 ## Usage
 
-To use the G_Collector utility in your C projects, follow these steps:
+To use the Garbage_collector utility in your C projects, follow these steps:
 
-1. Include the `g_collector.h` header file in your source files where memory management is required:
+1. Include the `garbage_collector.h` header file in your source files where memory management is required:
 
    ```c
-   #include "g_collector.h"
+   #include "garbage_collector.h"
    ```
 
 2. Use the provided functions such as `g_malloc` for memory allocation and `clear_all` for memory cleanup as needed in your code.
 
-3. Compile your C program with the necessary flags and dependencies, including the `g_collector.h` header file and any source files using G_Collector functions.
+3. Compile your C program with the necessary flags and dependencies, including the `garbage_collector.h` header file and any source files using Garbage_collector functions.
 
-4. Run your compiled program to observe memory allocation and cleanup using G_Collector.
+4. Run your compiled program to observe memory allocation and cleanup using Garbage_collector.
 
 ## Example
 
-Here's a simple example of using G_Collector in a C program:
+Here's a simple example of using Garbage_collector in a C program:
 
 ```c
 #include <stdio.h>
-#include "g_collector.h"
+#include "garbage_collector.h"
 
 int main() {
     // Allocate memory using g_malloc
