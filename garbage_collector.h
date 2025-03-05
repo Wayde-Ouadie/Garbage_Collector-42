@@ -15,21 +15,17 @@
 
 # include <stdlib.h>
 
-typedef enum e_call
+typedef enum e_mode
 {
 	FREE,
 	MALLOC
-}	t_call;
+}	t_mode;
 
-typedef struct s_col
+typedef struct s_memory
 {
 	void			*ptr;
-	struct s_col	*next;
-}	t_col;
+	struct s_memory		*next;
+}	t_memory;
 
-t_col	*new_node(void *ptr);
-void	clear_all(t_col **head);
-t_col	*last_node(t_col **head);
-void	add_back(t_col **head, t_col *new);
-void	*g_malloc(size_t size, t_call call);
+void	*g_malloc(size_t size, t_mode mode);
 #endif
