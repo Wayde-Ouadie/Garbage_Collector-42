@@ -74,21 +74,27 @@ void	*grb_coll(size_t size, t_mode mode)
 	t_memory		*tracker;
 	void			*ptr;
 
-	if (mode == 1)
+	if (mode == MALLOC)
 	{
 		ptr = malloc(size);
 		if (!ptr)
-			ft_err(MALLOC_FAILURE);
+		{
+			fprintf(stderr, "Error: Memory allocation failed.\n");
+			grb_coll(0, FREE);
+			exit(EXIT_FAILURE);
+		}
 		tracker = create_node(ptr);
 		if (!tracker)
 		{
 			free(ptr);
-			ft_err(MALLOC_FAILURE);
+			fprintf(stderr, "Error: Memory allocation failed.\n");
+			grb_coll(0, FREE);
+			exit(EXIT_FAILURE);
 		}
 		lst_add_back(&memory_list, tracker);
 		return (ptr);
 	}
-	else if (mode == 0)
+	else if (mode == FREE)
 		free_memory(&memory_list);
 	return (NULL);
 }
