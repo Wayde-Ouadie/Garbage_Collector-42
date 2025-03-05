@@ -12,7 +12,6 @@
 
 #include "garbage_collector.h"
 
-
 static t_memory	*create_node(void *ptr)
 {
 	t_memory	*new;
@@ -69,7 +68,7 @@ static void	free_memory(t_memory **head)
 	*head = NULL;
 }
 
-void	*grb_coll(size_t size, int mode)
+void	*grb_coll(size_t size, t_mode mode)
 {
 	static t_memory	*memory_list;
 	t_memory		*tracker;
@@ -94,16 +93,3 @@ void	*grb_coll(size_t size, int mode)
 	return (NULL);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	int	*ptr;
-
-// 	ptr = grb_coll(sizeof(int), MALLOC);
-// 	if (!ptr)
-// 		return (1);
-// 	*ptr = 42;
-// 	printf("%d\n", *ptr);
-// 	grb_coll(0, FREE);
-// 	return (0);
-// }
